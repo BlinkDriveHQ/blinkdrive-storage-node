@@ -1,0 +1,58 @@
+# Binaries and executables
+/storage-client
+/storage-node
+*.exe
+*.out
+/bin/
+
+# Dependency directories
+/vendor/
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Test and development files
+/test/
+/tmp/
+*.test
+
+# Go workspace files
+go.work
+go.work.sum
+
+# Environment files
+.env
+.env.local
+
+# Protobuf generated files
+/proto/*.pb.go
+/proto/*_grpc.pb.go
+
+# Storage node directories - ADDED THIS SECTION
+/storage_node*/
+/storage_node1/
+/storage_node2/
+/storage_node3/
+/storage_node4/
+/storage_node5/
+/storage-data/
+/storage/
+
+# Log files
+*.log
+/logs/
+
+# Binary output from examples
+/examples/*.exe

@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package storage;
+
+option go_package = "storagenode/proto";
+
+service StorageNode {
+    rpc UploadFile(stream FileChunk) returns (UploadResponse);
+    rpc DownloadFile(FileRequest) returns (stream FileChunk);
+    rpc DeleteFile(FileRequest) returns (DeleteResponse);
+    rpc GetNodeStatus(StatusRequest) returns (StatusResponse);
+}
+
+message FileChunk {
+    string file_id = 1;
+    bytes content = 2;
+    int32 chunk_number = 3;
+}
+
+message FileRequest {
+    string file_id = 1;
+}
+
+message UploadResponse {
+    bool success = 1;
+    string file_id = 2;
+    string message = 3;
+}
+
+message DeleteResponse {
+    bool success = 1;
+    string message = 2;
+}
+
+message StatusRequest {}
+
+message StatusResponse {
+    double disk_space_available = 1;
+    int32 files_stored = 2;
+    string node_id = 3;
+    bool healthy = 4;
+}
