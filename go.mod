@@ -2,10 +2,9 @@ module storagenode
 
 go 1.24.2
 
-require (
-	google.golang.org/grpc v1.72.0
-	google.golang.org/protobuf v1.36.6
-)
+require google.golang.org/grpc v1.72.0
+
+require google.golang.org/protobuf v1.36.6 // indirect
 
 require (
 	golang.org/x/net v0.35.0 // indirect
